@@ -5,12 +5,12 @@ A report on the project and a PowerPoint presentation are also included.
 
 # Group Members
 
-- MOHAMED MAHEEN (13766356)
-- ALBIN (13872558)
-- YUNCHHO (13880269)
-- ROHAN (13511636)
-- THOMAS (13877806)
-- JOSHUA (13884730)
+- Mohamed Maheen (13766356)
+- Albin (13872558)
+- Yunchho (13880269)
+- Rohan (13511636)
+- Thomas (13877806)
+- Joshua (13884730)
 
 # Work Allocation
 -	Main Page: (Rohan) was asked to work on this part.
