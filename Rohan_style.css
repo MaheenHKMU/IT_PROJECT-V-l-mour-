@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+/* Container to constrain the UI */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 700px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 10;
+}
+
+.sidebar-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+
+.sidebar-icon {
+    width: 30px;
+    height: 40px;
+    border: 1px solid #000;
+    margin-right: 10px;
+    position: relative;
+}
+
+.sidebar-icon::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    background: #000;
+    top: 10px;
+    left: 15%;
+    
+}
+
+.sidebar-icon::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    background: #000;
+    top: 18px;
+    left: 15%;
+   
+}
+
+.sidebar-icon span {
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    background: #000;
+    top: 26px;
+    left: 15%;
+    
+}
+
+.sidebar-toggle:hover .sidebar-icon::before,
+.sidebar-toggle:hover .sidebar-icon::after,
+.sidebar-toggle:hover .sidebar-icon span {
+    background: #555;
+}
+
+.header-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-item {
+    padding: 8px 15px;
+    display: inline-flex;
+    border: none;
+    cursor: pointer;
+}
+.search img{
+    height: 25px;
+}
+.search{
+    display: flex;
+}
+.search img{
+    height: 25px;
+}
+.search input{
+background-color: transparent;
+height: 25px;
+outline: none;
+border-top: 5px;
+border-left: 5px;
+border-right: 5px;
+}
+/*search bar */
+
+/* Shopping cart*/
+.cartLogo{
+    display: flex;
+
+}
+.cartLogo img{
+    height: 25px;
+}
+ 
+/* log in*/
+.log{
+    display: flex;
+}
+
+/* Main content */
+.content {
+    display: flex;
+    height: calc(100% - 80px); /* Subtract header height */
+    position: relative;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.column.left {
+    border-right: 1px solid #000;
+}
+
+/* Full screen background images */
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;    
+}
+
+
+/* Semi-transparent overlay */
+.column-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0); /* Changed to fully transparent initially */
+    z-index: 2;
+    transition: background-color 0.3s ease; /* Transition for background color */
+    display: flex; /* Enable flexbox for centering text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Transition for opacity */
+}
+
+.column:hover .column-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black on hover */
+    opacity: 1; /* Show overlay on hover */
+}
+
+.overlay-text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer; /* Make it clear it's clickable */
+}
+
+.overlay-text:hover {
+    text-decoration: underline;
+}
+
+
+.brand-logo {
+    width: 150px; /* Set the width to 150px */
+    height: 150px; /* Set the height to 150px */
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0; /* Remove padding as it affects image size */
+    border: 1px solid #000;
+    font-size: 28px; /* Consider removing if you're only using an image */
+    text-align: center; /* Consider removing if you're only using an image */
+    background: #fff;
+    z-index: 10;
+    transition: all 0.3s ease;
+    overflow: hidden; /* Ensures the image stays within the div */
+}
+
+.brand-logo img {
+width: 100%; /* Make the image fill the div's width */
+height: 100%; /* Make the image fill the div's height */
+object-fit: contain; /* Maintain image aspect ratio and fit within the container */
+/* OR object-fit: cover; to make the image fill the container, potentially cropping it */
+}
+
+.brand-logo:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-text {
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 3;
+    color: #000;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+}
+
+/* Video section */
+.video-container {
+    margin: 20px 0;
+    position: relative;
+    width: 80%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.play-button::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-left: 20px solid #333;
+    border-bottom: 12px solid transparent;
+    margin-left: 5px;
+}
+
+.video-container:hover .play-button {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+.video-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+.buy-now {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 4px;
+    backdrop-filter: blur(3px);
+}
+
+.buy-now span {
+    text-decoration: underline;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.buy-now:hover {
+    transform: translateX(5px);
+    color: #555;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+    padding: 30px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-menu {
+    margin-top: 40px;
+}
+
+.sidebar-menu li {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+
+.close-sidebar {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V'làmour | New Collection Online </title>
+    <link rel="icon" type="image" href="./Logo.svg">
+    <link rel="stylesheet" href="maheen.styles.css">
+
+</head>
+<body>
+    <header>
+        <div id="headerContents">
+            <div>
+                <div class="headerLeft"> 
+                    <img src= "photo/Logo.svg" alt="V'làmour" id="logo">    
+
+            
+                </div>
+            </div>
+            <ul style="list-style-type: none;">
+                <li id="search-bar">
+                    <input type="text" id="find" placeholder=" Search..." onkeyup="getDisplay()">
+                    <img src="photo/loupe.png">
+                </li>
+                <li id="cart"><a href="#">
+                    <img src="photo/shopping cart.png"></a></li>
+                <li><a href="login page - yunchho/login page - Copy 2/signup.html">log in</a></li>
+
+            </ul>
+
+            
+    </header>
+    <main>
+       <section class="product">
+           <div class="type">
+               <ul style="list-style-type:none;" class="items">
+                   <li onclick="filterItems('all')">view all</li>
+                   <li onclick="filterItems('shirt')">shirts</li>
+                   <li onclick="filterItems('jacket')">jacket</li>
+                   <li onclick="filterItems('skirt')">skirt</li>
+                   <li onclick="filterItems('dress')">Dress</li>
+                   <li><a href="maheen.Product_men.html">Man</a></li>
+               </ul>
+               <ul style="list-style-type: none;" class="pages">
+                   <li>Page</li>
+                   <li><a>1</a></li>
+                   <li><a>2</a></li>
+                   <li><a>3</a></li>
+
+               </ul>
+           </div>
+    </main>
+
+    
+
+    <div id="container">
+    </div>
+
+    <div id="main-container">
+        <div id="container-bottom">
+            <div class="box">
+                <div class="bottom-heading">HELP</div>
+                <div>SHOP AT V'làmour.COM</div>
+                <div>PRODUCT</div>
+                <div>PAYMENT</div>
+                <div>SHIPPING</div>
+                <div>CLOTHES COLLECTION</div>
+                <div>MY ACCOUNT</div>
+            </div>
+
+            <div class="box">
+                <div class="bottom-heading">FOLLOW US</div>
+                <div>INSTAGRAM</div>
+                <div>FACEBOOK</div>
+                <div>YOUTUBE</div>
+            </div>
+
+            <div class="box">
+                <div class="bottom-heading">COMPANY</div>
+                <div>ABOUT US</div>
+            </div>
+
+        </div>
+    </div>
+
+   
+
+    <script>
+        var mensData = [
+            {
+                id: 1,
+                class: "skirt",
+                image_url: "./items/items_1/1.webp",
+                name: "Mid-Length Pleated Skirt",
+                price: "$ 999",
+            },{
+                id: 2,
+                class: "shirt",
+                image_url: "./items/items_2/1.webp",
+                name: "Blouse",
+                price: "$ 999",
+            },{
+                id: 3,
+                class: "jacket",
+                image_url: "./items/items_3/1.webp",
+                name: "Oversized Blazer",
+                price: "$ 999",
+            },{
+                id: 4,
+                class: "shirt",
+                image_url: "./items/items_4/1.webp",
+                name: "Asymmetric Tank Top",
+                price: "$ 999",
+            },{
+                id: 5,
+                class: "dress",
+                image_url: "./items/items_5/1.webp",
+                name: "Short Asymmetric Dress",
+                price: "$ 999",
+            }, {
+                id: 6,
+                class: "jacket",
+                image_url: "./items/items_6/1.webp",
+                name: "Asymmetric Short-Sleeved Jacket with Belt",
+                price: "$ 1,899",
+            }, {
+                id: 7,
+                class: "jacket",
+                image_url: "./items/items_7/1.webp",
+                name: "Leather Jacket",
+                price: "$ 999",
+            }, {
+                id: 8,
+                class: "shirt",
+                image_url: "./items/items_8/1.webp",
+                name: "Chez Moi Shirt",
+                price: "$ 999",
+            }
+        ];
+
+        //The currentFilter variable keeps track of the currently selected category, initially set to 'all' to display all items by default.
+        var currentFilter = 'all';
+
+        //The function retrieves the value from the search box using document.getElementById('searchInput') and converts it to lowercase for case-insensitive comparison.
+
+        function getDisplay() {
+            const input = document.getElementById('find').value.toLowerCase();
+
+            const filteredData = mensData.filter(item => {
+
+                //Checks if the item belongs to the currently selected category (or if 'all' is selected).
+                const matchesCategory = currentFilter === 'all' || item.class === currentFilter;
+
+                //Checks if the item's name includes the search input
+                const matchesSearch = item.name.toLowerCase().includes(input);
+
+                //Both conditions must be true for an item to be included in the filteredData array.
+                return matchesCategory && matchesSearch;
+            });
+            //Finally, it calls displayItems(filteredData) to update the displayed items based on the filtered results.
+            displayItems(filteredData);
+        }
+        
+        //This function updates the currentFilter variable based on the category selected by the user (e.g., "jacket").
+        function filterItems(category) {
+            currentFilter = category;    // Update the current filter
+            getDisplay();       // Refresh the display
+        }
+
+
+        /* displayItems(data): This function takes an array of items as input and displays them in the #container div.*/
+        function displayItems(data) {
+            const container = document.getElementById('container');
+            container.innerHTML = ''; 
+            // It clears any existing items and then iterates over the provided data, creating HTML elements for each item (image, name, and price).
+
+
+            data.forEach(function(item) {
+                var itemContainer = document.createElement('div');
+                
+                /* Each item is wrapped in a link that points to a product details page.*/
+
+                var img=document.createElement('img');
+                img.src=item.image_url;
+                
+                let a = document.createElement('a');
+                a.setAttribute('href', `./Thomas_Product_Details.html?id=${item.id}`); 
+                a.setAttribute('target','_self');
+                a.append(img);
+
+                var box1 = document.createElement('div');
+                box1.setAttribute('id', 'box1');
+
+                var name = document.createElement('p');
+                name.textContent = item.name;
+
+                var price = document.createElement('p');
+                price.innerText = item.price;
+
+                box1.append(name, price);
+                itemContainer.append(a, box1);
+                container.append(itemContainer);
+            });
+        }
+         
+        displayItems(mensData);
+
+    </script>    
+    
+
+        
+</body>
+</html>

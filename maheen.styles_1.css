@@ -1,0 +1,213 @@
+* {
+    font-family: 'Tan Pearl';
+    font-stretch: ultra-condensed;
+}
+/*-------------------- Header ------------------------- */
+
+header {
+    width: 100%;
+    padding: 12px 24px 20px 24px;
+    position: fixed;
+    margin: 0px;
+}
+
+
+#logo {
+    width: 212px;
+}
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+@media only screen and (max-width: 760px) {
+    #helpOption {
+        display: none;
+    }
+    #headerRight {
+        width: 10%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #logInOption {
+        display: none;
+    }
+    #headerRightLeft>a {
+        padding: 0px;
+    }
+    #logo {
+        width: 170px;
+    }
+}
+/*-------------------- Header End------------------------- */
+/*------------- Modal ---------------*/
+
+
+@keyframes opac {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+@keyframes show {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+
+
+#emptySpace {
+    height: 100px;
+    width: 341.25px;
+    background-color: white;
+}
+
+
+
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 90%;
+    /* border: 2px solid red; */
+    margin: auto;
+}
+
+#box {
+    height: auto;
+    width: 32%;
+    /* border: 2px solid green; */
+    margin: auto;
+}
+
+p {
+    font-size: small;
+    font-size: 13px;
+    color: grey;
+    line-height: 17px;
+}
+
+#sub-box-1 {
+    width: 50%;
+    padding-top: 195px;
+}
+
+#sub-box-2 {
+    margin-top: 50px;
+    height: 80%;
+}
+
+.product {
+    display: flex;
+}
+
+.product-small-img {
+    display: grid;
+    gap: 1px;
+}
+
+.product-small-img img {
+    height: 60px;
+}
+
+.img-container {
+    width: 80%;
+}
+
+.img-container img {
+    width: 95%;
+}
+
+#sub-box-3 {
+    padding-top: 65px;
+    margin-left: 25%;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+#sub-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+#price {
+    margin-bottom: 35px;
+}
+
+
+
+
+
+@media all and (min-width: 450px) and (max-width: 850px) {
+    #box {
+        width: 50%;
+    }
+    #container {
+        height: auto;
+    }
+}
+
+@media all and (min-width: 50px) and (max-width: 450px) {
+    #box {
+        width: 100%;
+    }
+    #container {
+        height: auto;
+    }
+}
+/* //added css for footer section  */
+
+#main-container {
+    width: 85%;
+    margin: auto;
+}
+
+#container-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 10px;
+    line-height: 25px;
+    height: 600px;
+    margin-top: 600px;
+    color: gray;
+}
+
+#container-bottom1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 150px;
+    color: gray;
+}
+
+#container-bottom2 {
+    font-size: 10px;
+    height: 250px;
+    color: gray;
+}
+
+.bottom-heading {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 45px;
+}
+
+
+

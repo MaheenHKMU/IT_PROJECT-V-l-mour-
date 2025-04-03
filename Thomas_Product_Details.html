@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V'làmour</title>
+    <link rel="icon" type="image" href="./Logo.svg">
+    <link rel="stylesheet" href="Thomas_Details_css.css">
+    
+</head>
+
+<body>
+    <header>
+        <div id="headerContents">
+            <div id="headerLeft">
+                <div> 
+                    <img src= "./Logo.svg" alt="V'làmour" id="logo">
+                </div>
+            </div>
+            <div class="iconCart">
+                <img src="icon.png">
+                <div class="totalQuantity">0</div>
+            </div>
+          
+        </div>
+    </header>
+
+    
+
+    <div id="container">
+        <div id="box">
+            <div id="sub-box-1">
+                <h4 id="productDescription"></h4>
+                <p id="productDetails"></p>
+            </div>
+    
+        </div>
+        <div id="box">
+            <div id="sub-box-2">
+                <div class="product">
+                    <div class="img-container">
+                        <img id="imageBox" src="">
+                    </div>
+                    <div class="product-small-img" id="smallImagesContainer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="box">
+            <div id="sub-box-3">
+                <h3 id="productName"></h3>
+                <p id="productPrice"></p>
+                <hr>
+    
+                <ul id="sizesList">
+                </ul>
+    
+                <hr>
+                <div id="sub-box">
+                    <p> SIZE GUIDE </p>
+                </div>
+                <button onclick="addToCart()"> ADD TO BAG </button>
+            </div>
+        </div>
+    </div>
+    <div class="cart">
+        <h2>
+            CART
+        </h2>
+
+        <div class="listCart">
+
+
+            <div class="item">
+                <img src="images/1.webp">
+                <div class="content">
+                    <div class="name">CoPilot / Black / Automatic</div>
+                    <div class="price">$550 / 1 product</div>
+                </div>
+                <div class="quantity">
+                    <button>-</button>
+                    <span class="value">3</span>
+                    <button>+</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="buttons">
+            <div class="close">
+                CLOSE
+            </div>
+            <div class="checkout">
+                <a href="checkout.html">CHECKOUT</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="main-container">
+        <div id="container-bottom">
+            <div class="box">
+                <div class="bottom-heading"> HELP </div>
+                <div> SHOP AT LAMOUR </div>
+            </div>
+
+            <div class="box">
+                <div> Instagram </div>
+                <div> Facebook </div>
+            </div>
+
+            <div class="box">
+                <div class="bottom-heading">Company </div>
+                <div> About Us </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+    
+        
+        const products = [
+            {
+                id: 1,
+                name: "Mid-Length Pleated Skirt",
+                price: "$999",
+                image_url: "./items/items_1/1.webp",
+                description: "Bomber Jacket made from Beige Cashmere",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                additional_images: [
+                    "./items/items_1/1.webp",
+                    "./items/items_1/2.webp",
+                    "./items/items_1/3.webp",
+                    "./items/items_1/4.webp",
+                    "./items/items_1/5.webp"
+                ]
+            },
+    
+            {
+                id: 2,
+                name: "Blouse",
+                price: "$999",
+                image_url: "/items/items_2/1.webp",
+                description: "Fine Material used for Pull over shirt",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                additional_images: [
+                    "./items/items_2/1.webp",
+                    "./items/items_2/2.webp",
+                    "./items/items_2/3.webp",
+                    "./items/items_2/4.webp",
+                    "./items/items_2/5.webp"
+                ]
+            },
+    
+            {
+                id: 3,
+                name: "Oversized Blazer",
+                price: "$999",
+                image_url: "./items/items_3/1.webp",
+                description: "Couture Bomber Jacket made from Beige Cashmere",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                additional_images: [
+                    "./items/items_3/1.webp",
+                    "./items/items_3/2.webp",
+                    "./items/items_3/3.webp",
+                    "./items/items_3/4.webp",
+                    "./items/items_3/5.webp"
+                ]
+            },
+
+            {
+                id: 4,
+                name: "Asymmetric Tank Top",
+                price: "$999",
+                image_url: "./items/items_4/1.webp",
+                description: "Couture Bomber Jacket made from Beige Cashmere",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                additional_images: [
+                    "./items/items_4/1.webp",
+                    "./items/items_4/2.webp",
+                    "./items/items_4/3.webp",
+                    "./items/items_4/4.webp",
+                    "./items/items_4/5.webp"
+                ]
+            },
+
+            {
+                id: 5,
+                name: "Short Asymmetric Dress",
+                price: "$999",
+                image_url: "./items/items_5/1.webp",
+                description: "Couture Bomber Jacket made from Beige Cashmere",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                additional_images: [
+                    "./items/items_5/1.webp",
+                    "./items/items_5/2.webp",
+                    "./items/items_5/3.webp",
+                    "./items/items_5/4.webp",
+                    "./items/items_5/5.webp"
+                ]
+            },
+
+            {
+                id: 6,
+                name: "Asymmetric Short-Sleeved Jacket with Belt",
+                price: "$999",
+                image_url: "./items/items_6/1.webp",
+                description: "Couture Bomber Jacket made from Beige Cashmere",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                additional_images: [
+                    "./items/items_6/1.webp",
+                    "./items/items_6/2.webp",
+                    "./items/items_6/3.webp",
+                    "./items/items_6/4.webp",
+                    "./items/items_6/5.webp"
+                ]
+            },
+
+            {
+                id: 7,
+                name: "Leather Jacket",
+                price: "$999",
+                image_url: "./items/items_7/1.webp",
+                description: "Couture Bomber Jacket made from Beige Cashmere",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                additional_images: [
+                    "./items/items_7/1.webp",
+                    "./items/items_7/2.webp",
+                    "./items/items_7/3.webp",
+                    "./items/items_7/4.webp",
+                    "./items/items_7/5.webp"
+                ]
+            },
+
+            {
+                id: 8,
+                name: "Chez Moi Shirt",
+                price: "$999",
+                image_url: "./items/items_8/1.webp",
+                description: "Couture Bomber Jacket made from Beige Cashmere",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                additional_images: [
+                    "./items/items_8/1.webp",
+                    "./items/items_8/2.webp",
+                    "./items/items_8/3.webp",
+                    "./items/items_8/4.webp",
+                    "./items/items_8/5.webp"
+                ]
+            },
+
+        ];
+    
+       
+        const product = products.find(p => p.id == productId);
+    
+        if (product) {
+            
+            document.getElementById('imageBox').src = product.image_url;
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productPrice').textContent = product.price;
+            document.getElementById('productDescription').textContent = product.description;
+    
+            // Update additional images
+            const smallImagesContainer = document.getElementById('smallImagesContainer');
+            smallImagesContainer.innerHTML = ''; // Clear existing images
+            product.additional_images.forEach(image => {
+                const img = document.createElement('img');
+                img.src = image;
+                img.onclick = function() {
+                    document.getElementById('imageBox').src = this.src;
+                };
+                smallImagesContainer.appendChild(img);
+            });
+    
+            // Update sizes
+            const sizesList = document.getElementById('sizesList');
+            sizesList.innerHTML = ''; // Clear existing sizes
+            product.sizes.forEach(size => {
+                const li = document.createElement('li');
+                li.textContent = size;
+                sizesList.appendChild(li);
+            });
+        } else {
+            // Handle case where product is not found
+            document.getElementById('productName').textContent = "Product not found.";
+        }
+    
+       
+    </script>
+    <script src="Add to Cart_Detail.js"></script>
+    <script src="java vlamour 3.js"></script>
+
+
+</body>
+</html>

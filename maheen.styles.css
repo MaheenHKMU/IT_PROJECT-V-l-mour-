@@ -1,0 +1,319 @@
+* {
+    font-family: 'Tan Pearl';
+    font-stretch: ultra-condensed;
+    margin: 0%;
+    padding: 0%;
+}
+
+
+header{
+    height: 90px;
+    width: 100;
+
+
+/* Codes below this part is edited by Albin */    
+}
+header #headerContents{
+    width: 100%;
+    padding: 12px 24px 20px 24px;
+    position: fixed;
+    margin: 0px;
+
+}
+
+
+header h1{
+    color:black;
+    font-size: 50px;
+    position: absolute;
+    left:120px;
+    line-height: 90px;
+}
+
+header ul{
+    position: absolute;
+    right: 6vw;
+    top:0;
+
+}
+
+header li{
+    display: inline;
+    margin: 20px;
+    font-size: large;
+}
+
+
+/** search bar**/
+#search-bar{
+    width: 155px;
+    height: 25px;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    right: 210px;
+    padding: 4px;
+    
+}
+#search-bar img{
+    height: 25px;
+}
+#search-bar input{
+    background-color: transparent;
+    height: 25px;
+    outline: none;
+    border-top: 5px;
+    border-left: 5px;
+    border-right: 5px;
+
+
+}
+
+#cart img{
+    display: inline-flex ;
+    height: 2.5rem;
+    width: 2.5rem;
+
+}
+#log{
+    display: inline-flex;
+}
+.content .product_1{
+    margin-top: 30px;
+}
+.content .product_1 h3{
+    padding-top: 5px;
+    letter-spacing: 2px;
+    font-size: 22px;
+    font-family: 400;
+
+}
+.content .product_1 h4{
+    padding: 3px 0px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+
+}
+
+
+
+header a{
+    color: black;
+    text-decoration:none;
+    line-height: 90px;
+    position: relative;
+    bottom: 75px;
+}
+
+header a:hover{
+    text-decoration: underline;
+}
+
+
+
+.type{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.type a{
+    color: black;
+    text-decoration: none;
+}
+
+.type a:hover{
+    text-decoration: underline;
+}
+
+
+.items{
+    position: relative;
+    left: 30px;
+    top:10px;
+    
+}
+
+.items li{
+    display: inline;
+    margin: 20px;
+    font-size: 2vh;
+    cursor: pointer;
+}
+
+.pages {
+    position: relative;
+    top: 10px;
+    right: 30px;
+}
+
+
+.pages li{
+    display: inline;
+    margin: 15px;
+}
+
+/* Till this above part was edited by Albin */
+
+
+
+#logo {
+    cursor: pointer;
+    width: 212px;
+}
+
+/* we used the # id selector to refer to the logo (single )*/
+
+/* learned a new funciton @media */
+/* media query* - starts a media query 
+   only screen  - this mentions that the styles within the media query should be only applied to the screen
+   (max-width: 760px) - this mentions that the media query should only be applied when the screen width is 760px or less*/
+
+
+@media only screen and (max-width: 760px) {
+   
+    #logo {
+        width: 170px;
+    }
+}
+
+/* The Header CSS ends here */
+
+
+
+
+@keyframes show {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+
+
+#emptySpace {
+    height: 100px;
+    width: 341.25px;
+    background-color: white;
+}
+
+
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    /* padding-top: 15vh; */
+}
+
+#box1 {
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+
+
+/* we intially set all the <p> and <img> to this styles*/
+
+p {
+    margin-top: 6px;
+    font-size: small;
+    color: gray;
+}
+
+/* if the image is inputted default what happens is we will encounter inline text
+   however if we use block it will take up the entire line and there wont be any text taking up the space*/
+img {
+    display: block;
+    width: 100%;
+}
+
+
+/* in this 3 set of codes below media queries, each with a different condition: */
+/* this query applies to screen with the mentioned min and max width
+   the styles inside this block will be applied to container element
+   grid-teomplate-column property to repeat(4,1fr)
+   this means the grid will have 4 columns with equal grids and the margin property is set to auto to centre horizontally. */
+
+
+@media all and (min-width: 650px) and (max-width: 850px) {
+    #container {
+        grid-template-columns: repeat(4, 1fr);
+        margin: auto;
+    }
+
+
+}
+
+@media all and (min-width: 530px) and (max-width: 650px) {
+    #container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media all and (min-width: 50px) and (max-width: 530px) {
+    #container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* The purpose of these media queries mentioned above is to create a responsive design that adapts to different sizes making 
+the design more suitable for different devices since we found that it looks different in windows and Mac.*/
+
+/* the css for the main page ends here */
+
+/* the below code is css for the footer section of the webpage */
+
+/* flex-direction: row this sets the direction of the layout in horizontal way
+   we intially set the gap to be 30px
+   line-height: adds some space between lines of text*/
+
+#main-container {
+    width: 85%;
+    margin: auto;
+}
+/* //added css for footer section  */
+
+#container-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 10px;
+    line-height: 25px;
+    height: 600px;
+    margin-top: 600px;
+    color: gray;
+}
+
+/* justify-content: - space-between - this sets layout to space-between, which means the 
+   the child element will be laid out horizontally.*/
+
+#container-bottom1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 150px;
+    color: gray;
+}
+
+#container-bottom2 {
+    font-size: 10px;
+    height: 250px;
+    color: gray;
+}
+
+.bottom-heading {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 45px;
+}
+
+

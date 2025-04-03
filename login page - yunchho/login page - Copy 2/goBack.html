@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>done REgister/Login</title>
+    <link rel="stylesheet" href="goBack.css">
+</head>
+<body>
+    <div class = "container">
+      <div class="back">
+        <p>you have succesfully logged in</p>
+      </div>
+      <a href="finaltry.html" class="back-btn">
+        back to shopping
+      </a>
+      <div id="Welcome"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+         let name = sessionStorage.getItem("username");
+         let display = document.getElementById("Welcome");
+         display.textContent = "hello "  + name;
+      });
+      </script>
+    </div>
+    
+</body>
+</html>

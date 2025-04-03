@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Sora&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Sora", sans-serif;
+}
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height:199vh;
+    background: url('city.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.container {
+    width: 420px;
+    height: 300px;
+    background: black;
+    border: 4px solid rgba(255, 255, 255, .2);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+ }
+.container .back-btn {
+    width: 100%;
+    height: 100px;
+    background: wheat;
+    border:4px wheat solid;
+    outline:wheat solid;
+    border-radius:20px;
+    box-shadow:0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 20px;
+    color:black;
+    position:relative;
+    font-weight:600;
+    top:200px;
+    left:70px;
+}
+.container .back {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px 0 15px;
+    color:white;
+    position:absolute;
+}
+#Welcome {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;    
+    position:relative;
+    top:60px;
+    left:0px;
+    color:wheat;  
+    font-weight:100;    
+    border:transparent 3px;
+    border-radius:20px;
+    background-color:crimson;
+    
+}
