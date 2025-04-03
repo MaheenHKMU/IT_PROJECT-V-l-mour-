@@ -3,6 +3,24 @@
 V'làmour is an online clothing retail platform developed for the IT 1030SEF course. It features seamless shopping with dynamic product displays, intuitive search and filter options, user account management, and a responsive design for all devices. Discover high-quality men's and women's apparel with easy navigation and checkout.
 A report on the project and a PowerPoint presentation are also included.
 
+# Group Members
+
+MOHAMED MAHEEN (13766356)
+ALBIN (13872558)
+YUNCHHO (13880269)
+ROHAN (13511636)
+THOMAS (13877806)
+JOSHUA (13884730)
+
+# Work Allocation
+-	Main Page: (Rohan) was asked to work on this part.
+-	Men's Product Page: (Maheen) is responsible for this part, which will include a product detail page. When a product on the men's product page is clicked, it will redirect to this detail page, showcasing specific product details, sizes, prices, and material information.
+-	Women's Product Page: (Thomas) was assigned to this page, which will follow the same structure and functionality as the men's product detail page.
+-	Sign Up / Log in Page: (Yunchho) was responsible for this part.
+-	Add to Cart Page: (Joshua) was tasked with this section.
+-	Search and Filter Function: ( Albin) connected the search and filter functionality within both the men's and women's clothing sections.
+
+
 ## Features
 
 - Dynamic product displays
